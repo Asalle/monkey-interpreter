@@ -8,23 +8,24 @@ type Token struct {
 }
 
 const (
-	ILLEGAL = "ILLEGAL"
-	EOF     = "EOF"
+	ILLEGAL = TokenType("ILLEGAL")
+	EOF     = TokenType("EOF")
+
 	// Identifiers + literals
-	IDENT = "IDENT" // add, foobar, x, y, ...
-	INT   = "INT"
-	// 1343456
-	// Operators
-	ASSIGN = "="
-	PLUS   = "+"
+	IDENT  = TokenType("IDENT") // add, foobar, x, y, ...
+	INT    = TokenType("INT")
+	ASSIGN = TokenType("=")
+	PLUS   = TokenType("+")
+
 	// Delimiters
-	COMMA     = ","
-	SEMICOLON = ";"
-	LPAREN    = "("
-	RPAREN    = ")"
-	LBRACE    = "{"
-	RBRACE    = "}"
+	COMMA     = TokenType(",")
+	SEMICOLON = TokenType(";")
+	LPAREN    = TokenType("(")
+	RPAREN    = TokenType(")")
+	LBRACE    = TokenType("{")
+	RBRACE    = TokenType("}")
+
 	// Keywords
-	FUNCTION = "FUNCTION"
-	LET      = "LET"
+	FUNCTION = TokenType("FUNCTION")
+	LET      = TokenType("LET")
 )

@@ -1,7 +1,6 @@
 package lexer
 
 import (
-	"github.com/Asalle/monkey-interpreter/lexer"
 	"github.com/Asalle/monkey-interpreter/token"
 	"testing"
 )
@@ -10,7 +9,7 @@ func Test_NextToken(t *testing.T) {
 	input := "=+{}();,"
 
 	cases := []struct {
-		expectedType    token.Token
+		expectedType    token.TokenType
 		expectedLiteral string
 	}{
 		{token.ASSIGN, "="},
@@ -23,9 +22,9 @@ func Test_NextToken(t *testing.T) {
 		{token.COMMA, ","},
 	}
 
-	l := lexer.MakeLexer(input)
+	l := MakeLexer(input)
 
-	for i, tt := range cases {
+	for _, tt := range cases {
 		token := l.NextToken()
 		if token.Type != tt.expectedType {
 			t.Errorf("Wrong token type: expected: %v, got: %v", tt.expectedType, token.Type)
